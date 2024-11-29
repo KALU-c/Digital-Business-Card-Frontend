@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { ModeToggle } from "./mode-toggle"
 
 const Navbar = () => {
   return (
@@ -16,7 +17,10 @@ const Navbar = () => {
           <p className="text-xs font-semibold text-muted-foreground">CREATE YOUR QR CODE FOR FREE</p>
         </div>
       </div>
-      <p className="text-lg font-bold">OOP - <span className="text-muted-foreground font-medium">Project 1</span></p>
+      <div className="flex flex-row gap-4 items-center">
+        <p className="text-lg font-bold">OOP - <span className="text-muted-foreground font-medium">Project 1</span></p>
+        <ModeToggle />
+      </div>
     </nav>
   )
 }

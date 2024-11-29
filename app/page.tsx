@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <main>
       <Navbar />
-      <div className="px-20 flex flex-row justify-between bg-gray-100">
+      <div className="px-20 flex flex-row justify-between bg-gray-100 dark:bg-black">
         <Card className="w-[63%] my-6">
           <CardHeader className="mb-4">
             <CardTitle className="text-2xl">Digital Business Card</CardTitle>
