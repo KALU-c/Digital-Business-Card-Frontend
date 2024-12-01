@@ -57,17 +57,17 @@ export default function Home() {
   return (
     <main>
       <Navbar />
-      <div className="px-20 flex flex-row justify-between bg-gray-100 dark:bg-black">
-        <Card className="w-[63%] my-6">
-          <CardHeader className="mb-4">
-            <CardTitle className="text-2xl">Digital Business Card</CardTitle>
-            <CardDescription>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad, recusandae.</CardDescription>
+      <div className="lg:px-20 sm:px-8 px-1 flex flex-col lg:flex-row justify-between dark:bg-black">
+        <Card className="lg:w-[63%] my-6">
+          <CardHeader className="sm:mb-4">
+            <CardTitle className="text-xl sm:text-3xl font-serif -mb-1">Digital Business Card</CardTitle>
+            <CardDescription className="text-xs sm:text-md">Generate and customize QR codes in seconds.</CardDescription>
           </CardHeader>
           <CardContent className="space-y-5">
             {/* Name */}
-            <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
               <Label className="font-semibold text-muted-foreground">Full Name: </Label>
-              <div className="w-[80%] flex flex-row justify-between items-center gap-6">
+              <div className="sm:w-[80%] flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-6">
                 <Input 
                   placeholder="First Name" 
                   onChange={e => setFullName({...fullName, firstName: e.target.value})} 
@@ -80,9 +80,9 @@ export default function Home() {
             </div>
 
             {/* Phone Number */}
-            <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
               <Label className="font-semibold text-muted-foreground">Phone Number: </Label>
-              <div className="w-[80%] flex flex-row justify-between items-center gap-6">
+              <div className="sm:w-[80%] flex flex-row justify-between items-center gap-6">
                 <Input 
                   placeholder="Mobile"
                   onChange={e => setContact({...contact, phoneNumber: e.target.value})} 
@@ -91,9 +91,9 @@ export default function Home() {
             </div>
 
             {/* Email */}
-            <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
               <Label className="font-semibold text-muted-foreground">Email: </Label>
-              <div className="w-[80%] flex flex-row justify-between items-center gap-6">
+              <div className="sm:w-[80%] flex flex-row justify-between items-center gap-6">
                 <Input 
                   onChange={e => setContact({...contact, email: e.target.value})}
                 />
@@ -101,9 +101,9 @@ export default function Home() {
             </div>
 
             {/* Company */}
-            <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
               <Label className="font-semibold text-muted-foreground">Company: </Label>
-              <div className="w-[80%] flex flex-row justify-between items-center gap-6">
+              <div className="sm:w-[80%] flex flex-col sm:flex-row justify-between items-center sm:gap-6 gap-2">
                 <Input 
                   placeholder="Company Name" 
                   onChange={e => setWork({...work, company: e.target.value})}
@@ -116,9 +116,9 @@ export default function Home() {
             </div>
 
             {/* Address */}
-            <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
               <Label className="font-semibold text-muted-foreground">Street: </Label>
-              <div className="w-[80%] flex flex-row justify-between items-center gap-6">
+              <div className="sm:w-[80%] flex flex-row justify-between items-center gap-6">
                 <Input 
                   className="h-[50px]" 
                   onChange={e => setAddress({...address, street: e.target.value})}
@@ -126,9 +126,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
               <Label className="font-semibold text-muted-foreground">City: </Label>
-              <div className="w-[80%] flex flex-row justify-between items-center gap-6">
+              <div className="sm:w-[80%] flex flex-col sm:flex-row justify-between items-center sm:gap-6 gap-2">
                 <Input 
                   onChange={e => setAddress({...address, city: e.target.value})}
                 />
@@ -139,9 +139,9 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
               <Label className="font-semibold text-muted-foreground">Country: </Label>
-              <div className="w-[80%] flex flex-row justify-between items-center gap-6">
+              <div className="sm:w-[80%] flex flex-row justify-between items-center gap-6">
                 <Input 
                   onChange={e => setAddress({...address, country: e.target.value})}
                 />
@@ -149,9 +149,9 @@ export default function Home() {
             </div>
 
             {/* Link */}
-            <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
               <Label className="font-semibold text-muted-foreground">Website: </Label>
-              <div className="w-[80%] flex flex-row justify-between items-center gap-6">
+              <div className="sm:w-[80%] flex flex-row justify-between items-center gap-6">
                 <Input 
                   placeholder="www.your-website.com" 
                   onChange={e => setWebsiteLink(e.target.value)}
@@ -159,17 +159,17 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="pt-4 w-full flex flex-row justify-center">
-              <Button className="w-[60%]" onClick={handleSubmit}>
+            <div className="sm:pt-4 w-full flex flex-row sm:justify-center">
+              <Button className="sm:w-[60%] w-full" onClick={handleSubmit}>
                 <RefreshCcw />
                 Generate QR code
               </Button>
             </div>
           </CardContent>
         </Card>
-        <Card className="w-[35%] my-6 h-fit">
+        <Card className="lg:w-[35%] my-6 h-fit">
           <CardHeader>
-            <CardTitle className="text-center text-muted-foreground text-2xl">Your QR code</CardTitle>
+            <CardTitle className="text-center text-muted-foreground sm:text-xl">Generated QR code</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="w-full flex justify-center mb-8">
@@ -181,7 +181,7 @@ export default function Home() {
                 height={200}
               />
               ): (
-                <div>No QR Code Generated</div>
+                <div className="text-muted-foreground text-sm">no QR code generated</div>
               )}
             </div>
             <Button className="rounded-sm w-full flex gap-2" disabled={qrCodeUrl ? false : true}>
@@ -194,8 +194,8 @@ export default function Home() {
           <Separator />
           <CardFooter className="py-2 flex flex-col">
             <p className="font-semibold underline mb-1">Team Members:</p>
-            <ol className="text-sm text-muted-foreground">
-              <li>1. Endekalu Zemenu</li>
+            <ol className="text-sm text-muted-foreground flex flex-col gap-1 font-serif">
+              <li>1. Endekalu zemenu</li>
               <li>2. Dawit Demissie</li>
               <li>3. Kaleb Melese</li>
             </ol>
