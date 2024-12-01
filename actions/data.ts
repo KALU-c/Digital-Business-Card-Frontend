@@ -1,4 +1,4 @@
-type ContactDataType = {
+export type ContactDataType = {
   fullName: {
     firstName: string;
     lastName: string;
@@ -16,27 +16,11 @@ type ContactDataType = {
   website: string;
 }
 
-const handleGenerateQRCode = async ({
-  fullName,
-  phoneNumber,
-  email,
-  company,
-  jobTitle,
-  address,
-  website
-}: ContactDataType) => {
-  const contactData: ContactDataType = {
-    fullName,
-    phoneNumber,
-    email,
-    company,
-    jobTitle,
-    address,
-    website
-  };
+const handleGenerateQRCode = async (contact: ContactDataType) => {
+  const contactData: ContactDataType = contact;
 
   try {
-    const response = await fetch("http://localhost:8080/api/qr/generate", {
+    const response = await fetch("http://localhost:8080/api/qrcode", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -50,6 +34,8 @@ const handleGenerateQRCode = async ({
 
       return qrCodeUrl;
     }
+
+    return null;
   } catch (error) {
     console.error("Error generating QR code: ", error);
   }

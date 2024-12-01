@@ -6,8 +6,8 @@ const Navbar = () => {
     <nav className="px-20 py-2 flex flex-row justify-between items-center">
       <div className="flex flex-row gap-4 items-center">
         <Image
-          className="w-8 h-8"
-          src={"/qr.png"}
+          className="w-16 h-8"
+          src={"/logo.jpg"}
           alt="logo"
           width={20}
           height={20}
