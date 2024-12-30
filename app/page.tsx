@@ -31,8 +31,8 @@ export default function Home() {
     country: ""
   });
   const [websiteLink, setWebsiteLink] = useState("");
-  
-  const [qrCodeUrl, setQrCodeUrl] = useState<string | undefined>(""); 
+
+  const [qrCodeUrl, setQrCodeUrl] = useState<string | undefined>("");
 
   async function handleSubmit() {
     const data: ContactDataType = {
@@ -44,12 +44,12 @@ export default function Home() {
       address,
       website: websiteLink
     };
-
     try {
       const qrImageUrl = await handleGenerateQRCode(data);
 
       setQrCodeUrl(qrImageUrl!);
-    } catch(error) {
+
+    } catch (error) {
       console.error(error);
     }
   }
@@ -66,26 +66,26 @@ export default function Home() {
           <CardContent className="space-y-5">
             {/* Name */}
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
-              <Label className="font-semibold text-muted-foreground">Full Name: </Label>
+              <Label className="font-semibold text-muted-foreground">Full Name: <span className="text-red-500">*</span></Label>
               <div className="sm:w-[80%] flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-6">
-                <Input 
-                  placeholder="First Name" 
-                  onChange={e => setFullName({...fullName, firstName: e.target.value})} 
+                <Input
+                  placeholder="First Name"
+                  onChange={e => setFullName({ ...fullName, firstName: e.target.value })}
                 />
-                <Input 
-                  placeholder="Last Name" 
-                  onChange={e => setFullName({...fullName, lastName: e.target.value})} 
+                <Input
+                  placeholder="Last Name"
+                  onChange={e => setFullName({ ...fullName, lastName: e.target.value })}
                 />
               </div>
             </div>
 
             {/* Phone Number */}
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
-              <Label className="font-semibold text-muted-foreground">Phone Number: </Label>
+              <Label className="font-semibold text-muted-foreground">Phone Number: <span className="text-red-500">*</span></Label>
               <div className="sm:w-[80%] flex flex-row justify-between items-center gap-6">
-                <Input 
+                <Input
                   placeholder="Mobile"
-                  onChange={e => setContact({...contact, phoneNumber: e.target.value})} 
+                  onChange={e => setContact({ ...contact, phoneNumber: e.target.value })}
                 />
               </div>
             </div>
@@ -94,8 +94,8 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-2">
               <Label className="font-semibold text-muted-foreground">Email: </Label>
               <div className="sm:w-[80%] flex flex-row justify-between items-center gap-6">
-                <Input 
-                  onChange={e => setContact({...contact, email: e.target.value})}
+                <Input
+                  onChange={e => setContact({ ...contact, email: e.target.value })}
                 />
               </div>
             </div>
@@ -104,13 +104,13 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
               <Label className="font-semibold text-muted-foreground">Company: </Label>
               <div className="sm:w-[80%] flex flex-col sm:flex-row justify-between items-center sm:gap-6 gap-2">
-                <Input 
-                  placeholder="Company Name" 
-                  onChange={e => setWork({...work, company: e.target.value})}
+                <Input
+                  placeholder="Company Name"
+                  onChange={e => setWork({ ...work, company: e.target.value })}
                 />
-                <Input 
-                  placeholder="Your Job" 
-                  onChange={e => setWork({...work, jobTitle: e.target.value})}
+                <Input
+                  placeholder="Your Job"
+                  onChange={e => setWork({ ...work, jobTitle: e.target.value })}
                 />
               </div>
             </div>
@@ -119,9 +119,9 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
               <Label className="font-semibold text-muted-foreground">Street: </Label>
               <div className="sm:w-[80%] flex flex-row justify-between items-center gap-6">
-                <Input 
-                  className="h-[50px]" 
-                  onChange={e => setAddress({...address, street: e.target.value})}
+                <Input
+                  className="h-[50px]"
+                  onChange={e => setAddress({ ...address, street: e.target.value })}
                 />
               </div>
             </div>
@@ -129,12 +129,12 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
               <Label className="font-semibold text-muted-foreground">City: </Label>
               <div className="sm:w-[80%] flex flex-col sm:flex-row justify-between items-center sm:gap-6 gap-2">
-                <Input 
-                  onChange={e => setAddress({...address, city: e.target.value})}
+                <Input
+                  onChange={e => setAddress({ ...address, city: e.target.value })}
                 />
-                <Input 
-                  placeholder="ZIP" 
-                  onChange={e => setAddress({...address, zip: e.target.value})}
+                <Input
+                  placeholder="ZIP"
+                  onChange={e => setAddress({ ...address, zip: e.target.value })}
                 />
               </div>
             </div>
@@ -142,8 +142,8 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
               <Label className="font-semibold text-muted-foreground">Country: </Label>
               <div className="sm:w-[80%] flex flex-row justify-between items-center gap-6">
-                <Input 
-                  onChange={e => setAddress({...address, country: e.target.value})}
+                <Input
+                  onChange={e => setAddress({ ...address, country: e.target.value })}
                 />
               </div>
             </div>
@@ -152,15 +152,19 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row justify-between sm:items-center gap-2">
               <Label className="font-semibold text-muted-foreground">Website: </Label>
               <div className="sm:w-[80%] flex flex-row justify-between items-center gap-6">
-                <Input 
-                  placeholder="www.your-website.com" 
+                <Input
+                  placeholder="www.your-website.com"
                   onChange={e => setWebsiteLink(e.target.value)}
                 />
               </div>
             </div>
 
             <div className="sm:pt-4 w-full flex flex-row sm:justify-center">
-              <Button className="sm:w-[60%] w-full" onClick={handleSubmit}>
+              <Button
+                className="sm:w-[60%] w-full"
+                onClick={handleSubmit}
+                disabled={fullName.firstName && contact.phoneNumber ? false : true}
+              >
                 <RefreshCcw />
                 Generate QR code
               </Button>
@@ -169,18 +173,18 @@ export default function Home() {
         </Card>
         <Card className="lg:w-[35%] my-6 h-fit">
           <CardHeader>
-            <CardTitle className="text-center text-muted-foreground sm:text-xl">Generated QR code</CardTitle>
+            <CardTitle className="text-center text-muted-foreground sm:text-xl font-serif">Generated QR code</CardTitle>
           </CardHeader>
           <CardContent>
             <div className="w-full flex justify-center mb-8">
               {qrCodeUrl ? (
                 <Image
-                src={qrCodeUrl}
-                alt="qr code"
-                width={200}
-                height={200}
-              />
-              ): (
+                  src={qrCodeUrl}
+                  alt="qr code"
+                  width={200}
+                  height={200}
+                />
+              ) : (
                 <div className="text-muted-foreground text-sm">no QR code generated</div>
               )}
             </div>
