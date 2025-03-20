@@ -1,6 +1,7 @@
 "use client"
 
-import handleGenerateQRCode, { ContactDataType } from "@/actions/data";
+import { ContactDataType } from "@/actions/data";
+import { generateQRCode } from "@/actions/generate-qr";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -45,10 +46,12 @@ export default function Home() {
       website: websiteLink
     };
     try {
-      const qrImageUrl = await handleGenerateQRCode(data);
+      // const qrImageUrl = await handleGenerateQRCode(data);
 
+      
+      const qrImageUrl = await generateQRCode(data)
+      
       setQrCodeUrl(qrImageUrl!);
-
     } catch (error) {
       console.error(error);
     }
@@ -197,12 +200,12 @@ export default function Home() {
           </CardContent>
           <Separator />
           <CardFooter className="py-2 flex flex-col">
-            <p className="font-semibold underline mb-1">Team Members:</p>
+            {/* <p className="font-semibold underline mb-1">Team Members:</p>
             <ol className="text-sm text-muted-foreground flex flex-col gap-1 font-serif">
               <li>1. Endekalu zemenu</li>
               <li>2. Dawit Demissie</li>
               <li>3. Kaleb Melese</li>
-            </ol>
+            </ol> */}
           </CardFooter>
         </Card>
       </div>
