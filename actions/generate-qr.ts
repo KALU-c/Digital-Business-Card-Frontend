@@ -20,7 +20,7 @@ export const generateQRCode = async (data: ContactDataType) => {
                   `URL:${data.website}\n` +
                   "END:VCARD";
 
-    const result = await QRCode.toDataURL(vCard)
+    const result = await QRCode.toDataURL(vCard, { type: "image/jpeg" })
 
     return result;
   } catch(error) {

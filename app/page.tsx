@@ -58,9 +58,9 @@ export default function Home() {
   }
 
   return (
-    <main>
+    <main className="min-h-screen dark:bg-black">
       <Navbar />
-      <div className="lg:px-20 sm:px-8 px-1 flex flex-col lg:flex-row justify-between dark:bg-black">
+      <div className="lg:px-20 sm:px-8 px-1 flex flex-col lg:flex-row justify-between">
         <Card className="lg:w-[63%] my-6">
           <CardHeader className="sm:mb-4">
             <CardTitle className="text-xl sm:text-3xl font-serif -mb-1">Digital Business Card</CardTitle>
